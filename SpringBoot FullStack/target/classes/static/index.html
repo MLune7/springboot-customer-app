@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>List of Customer</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Customer Management</h2>
+    <div>
+      <input id="firstName" type="text" />
+      <input id="lastName" type="text"/>
+      <input id="balance" type="number" />
+      <button class="button" onclick="addCustomer()">Add</button>
+    </div>
+    <div>
+      <table border="1">
+      <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th> Last Name</th>
+      <th>Account Balance</th>
+      <th>Category</th>
+      <th>Edit</th>
+      </tr>
+     <tbody id="TP"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

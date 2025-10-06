@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Customer Management</title>
+</head>
+<body onload="retrieveCustomers()">
+<div class="container">
+  <h2>Customer Management</h2>
+
+  <div>
+    <input id="firstName" type="text" placeholder="First Name"/>
+    <input id="lastName" type="text" placeholder="Last Name"/>
+    <input id="balance" type="number" placeholder="Balance"/>
+    <button class="button" onclick="addCustomer()">Add</button>
+  </div>
+
+  <div>
+    <select id="filterCategory" onchange="filterCategory()">
+      <option value="All">All</option>
+      <option value="VIP">VIP</option>
+      <option value="Premium">Premium</option>
+      <option value="Regular">Regular</option>
+    </select>
+    <button onclick="downloadCSV()">Export CSV</button>
+  </div>
+
+  <div>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Account Balance</th>
+        <th>Category</th>
+        <th>Points</th>
+        <th>Actions</th>
+      </tr>
+      <tbody id="TP"></tbody>
+    </table>
+  </div>
+
+  <div>
+    <button onclick="loadPage(0)">Page 1</button>
+    <button onclick="loadPage(1)">Page 2</button>
+  </div>
+
+  <canvas id="categoryChart" width="300" height="300"></canvas>
+
+  <!-- Modal -->
+  <div id="editModal">
+    <h3>Edit Customer</h3>
+    <input id="editFirstName" type="text" />
+    <input id="editLastName" type="text" />
+    <input id="editBalance" type="number" />
+    <button onclick="saveCustomer()">Save</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
